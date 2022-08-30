@@ -1,0 +1,9 @@
+<button *ngIf="!isSearchVisible" class="mat-icon-button search-icon" (click)="openSearch()">
+  <mat-icon>search</mat-icon>
+</button>
+<div appearance="standard" *ngIf="isSearchVisible" class="search">
+  <mat-icon matSuffix class="search-icon">search</mat-icon>
+  <input matInput (keyup)="filter($event)" placeholder="Search columns" class="search-input" #input>
+  <mat-icon matPrefix class="close" (click)="closeSearch()">close
+  </mat-icon>
+</div>

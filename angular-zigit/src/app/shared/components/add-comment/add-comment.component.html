@@ -1,0 +1,35 @@
+<ng-template #dialogAddComment class="sidebarCard">
+    <div>
+        <h2 class="mat-dialog-title">{{project.name}}</h2>
+    </div>
+    <div class="content">
+        <form [formGroup]="newCommentForm" fxLayout="column" fxLayoutAlign="start stretch" fxFill (submit)="onSubmit()">
+            <p>New Comment?</p>
+            <mat-form-field appearance="standard">
+              <mat-label>Comment text</mat-label>
+              <input matInput type="text" text="text" formControlName="text" required>
+              <mat-error *ngIf="newCommentForm.get('text')?.invalid && newCommentForm.get('text')?.hasError('required')">Please
+                specify a Comment text</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+              <mat-label>Comment time</mat-label>
+              <input matInput type="text" name="time" formControlName="time">
+              <mat-error *ngIf="newCommentForm.get('time')?.invalid && newCommentForm.get('time')?.hasError('required')">Please
+                specify a Comment time</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Comment img</mat-label>
+                <input matInput type="text" name="img" formControlName="img">
+                <mat-error *ngIf="newCommentForm.get('img')?.invalid && newCommentForm.get('img')?.hasError('required')">Please
+                  specify a Comment img</mat-error>
+              </mat-form-field>
+
+            <div class="mat-dialog-actions" fxLayoutAlign="end center" class="actionsBtn">
+                <button [mat-dialog-close]="true" class="cancel-btn" color="primary" type="button">save</button>
+                <button style="margin-left: 10px;" [mat-dialog-close]="false" class="btn" color="primary" type="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

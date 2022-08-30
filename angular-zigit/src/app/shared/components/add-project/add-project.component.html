@@ -1,0 +1,48 @@
+<div style="flex: 1 0 auto; display: flex;">
+      <form [formGroup]="newProjectForm" fxLayout="column" fxLayoutAlign="start stretch" fxFill (submit)="onSubmit()">
+        <p>New Project?</p>
+        
+        <mat-form-field appearance="standard">
+          <mat-label>Project Name</mat-label>
+          <input matInput type="text" name="name" formControlName="name" required>
+          <mat-error *ngIf="newProjectForm.get('name')?.invalid && newProjectForm.get('name')?.hasError('required')">Please
+            specify a project name</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Project url</mat-label>
+          <input matInput type="text" name="url" formControlName="url">
+          <mat-error *ngIf="newProjectForm.get('url')?.invalid && newProjectForm.get('url')?.hasError('required')">Please
+            specify a project url</mat-error>
+        </mat-form-field>
+
+          <mat-form-field appearance="standard">
+          <mat-label>Project status</mat-label>
+            <mat-select name="status" formControlName="status">
+              <mat-option *ngFor="let s of status" [value]="s.id">
+                {{s.value}}
+              </mat-option>
+            </mat-select>
+          <mat-error *ngIf="newProjectForm.get('status')?.invalid && newProjectForm.get('status')?.hasError('required')">Please specify
+            a project status</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Project endTime</mat-label>
+          <input matInput type="datetime" name="endTime" formControlName="endTime">
+          <mat-error *ngIf="newProjectForm.get('endTime')?.invalid && newProjectForm.get('endTime')?.hasError('required')">Please specify
+            a project endTime</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Project img</mat-label>
+          <input matInput type="text" name="img" formControlName="img">
+          <mat-error *ngIf="newProjectForm.get('img')?.invalid && newProjectForm.get('img')?.hasError('required')">Please specify
+            a project img</mat-error>
+        </mat-form-field>
+        
+          <button mat-raised-button class="add" (ngSubmit)="onSubmit()">save</button>
+      </form>
+    </div>
+    <button mat-raised-button color="primary" (click)="navigateToHome()">Home</button>
+  

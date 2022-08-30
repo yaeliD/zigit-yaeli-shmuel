@@ -1,0 +1,22 @@
+<div class="page-container">
+  <div class="partner-logo"></div>
+  <div class="login-card">
+    <div class="login-card-header">login</div>
+    <div class="login-card-content">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input class="form-field" [class.form-field-invalid]="email?.invalid && (email?.dirty || email?.touched)" id="email" formControlName="email" type="text" placeholder="email">
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <div class="error-message" *ngIf="email?.errors?.['required']">You must enter a email</div>
+          <div class="error-message" *ngIf="email?.errors?.['email']"> email</div>
+        </div>
+        <input class="form-field" [class.form-field-invalid]="password?.invalid && (password?.dirty || password?.touched)" id="password" formControlName="password" type="text" placeholder="password">
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <div class="error-message" *ngIf="password?.errors?.['required']">You must enter a password</div>
+          <div class="error-message" *ngIf="password?.errors?.['minlength']"> Please enter at least 5 characters</div>
+          <div class="error-message" *ngIf="password?.errors?.['maxlength']"> Please enter less than 10 characters</div>
+        </div>
+      <button type="submit" label="login" [disabled]="loginForm.invalid"></button>
+    </form>
+    </div>
+  </div>
+</div>

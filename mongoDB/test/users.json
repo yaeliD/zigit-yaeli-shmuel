@@ -1,0 +1,9 @@
+{
+    "_id" : ObjectId("630d390eb96750b0bc7a1378"),
+    "email" : "yaelid1999@gmail.com",
+    "password" : "yaeli123",
+    "products" : [
+
+    ],
+    "__v" : NumberInt(0)
+}

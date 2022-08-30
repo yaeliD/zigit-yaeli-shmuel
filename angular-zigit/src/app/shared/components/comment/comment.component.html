@@ -1,0 +1,15 @@
+<ng-template #dialogComments class="sidebarCard">
+    <div>
+        <h2 class="mat-dialog-title">{{currentProject.name}}</h2>
+    </div>
+    <div class="content">
+        <div *ngIf="comments">
+            <div *ngFor="let comment of comments">
+                <h3>{{comment?.time}}</h3>
+                <h3>{{comment?.text}}</h3>
+                <h3>{{comment?.img}}</h3>
+                <div>-------------------</div>
+            </div>
+        </div>
+    </div>
+</ng-template>

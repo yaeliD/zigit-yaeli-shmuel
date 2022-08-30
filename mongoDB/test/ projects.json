@@ -1,0 +1,24 @@
+{
+    "_id" : ObjectId("630e4748f4a311f8dd34d5ce"),
+    "name" : "rebar",
+    "url" : "https://rebar.co.il/",
+    "status" : "1",
+    "endTime" : "2022-08-30T17:21:13.660Z",
+    "img" : "",
+    "products" : [
+
+    ],
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("630e4787f4a311f8dd34d5d1"),
+    "name" : "b-fresh",
+    "url" : "https://b-fresh.org.il/menu",
+    "status" : "1",
+    "endTime" : "2022-08-30T17:22:20.474Z",
+    "img" : "",
+    "products" : [
+
+    ],
+    "__v" : NumberInt(0)
+}
